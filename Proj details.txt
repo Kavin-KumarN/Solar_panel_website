@@ -1,0 +1,70 @@
+Solar Panel / Renewable Energy Website
+Purpose: Generate leads for solar installation
+Target Users: Home owners, factories, apartments
+Key Sections:
+Hero: “Save Electricity Bills with Solar Energy”
+Services (Residential / Commercial / Industrial)
+Benefits & Cost Savings
+Installation Process
+Government Subsidy Info
+Testimonials
+Contact / Site Visit Form
+
+ One-Page Website Developer Checklist
+(Goal: Build one complete, professional, customer-ready website)
+1. Website Purpose & Message
+☐ Clear headline explaining what the business does
+☐ Clear value proposition visible on Home page
+☐ One primary Call-To-Action (CTA)
+2. Pages Included
+☐ Home
+☐ About Us
+☐ Services / Courses
+☐ Why Choose Us
+☐ Testimonials / Reviews
+☐ Contact Us
+☐ Privacy Policy & Terms
+3. Home Page Must Have
+☐ Hero section with CTA
+☐ Services / Offerings overview
+☐ Why Choose Us section
+☐ Process / How It Works (3–4 steps)
+☐ Testimonials section
+☐ Final CTA
+☐ Footer with contact details
+4. Design & UI Standards
+☐ Clean and modern design
+☐ Consistent color theme
+☐ Professional fonts
+☐ Proper spacing & alignment
+☐ Same button style across site
+5. Navigation & Usability
+☐ Simple top navigation (max 6 items)
+☐ Logo links to Home page
+☐ Contact CTA visible in header
+☐ Easy to understand page flow
+6. Mobile Compatibility
+☐ Fully responsive on mobile
+☐ Text readable on small screens
+☐ Buttons easy to click
+☐ No content overflow
+7. Content Quality
+☐ Simple and clear language
+☐ No grammar or spelling errors
+☐ Benefit-focused content
+☐ No Lorem Ipsum or dummy text
+8. Trust & Credibility
+☐ Testimonials or reviews included
+☐ Business address & contact details
+☐ Real or professional images
+☐ Social links (if available)
+9. Forms & Contact
+☐ Contact / Enquiry form
+☐ Required field validation
+☐ Success message after submit
+☐ Phone & email clickable
+10. Final Quality Check
+☐ No broken links
+☐ No empty sections
+☐ All CTAs working
+☐ Website ready to share with real customers

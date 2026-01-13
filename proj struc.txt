@@ -1,0 +1,68 @@
+solar_website/
+│
+├── frontend/                 # Streamlit application (Website UI)
+│   ├── app.py                # Entry point (Home page)
+│   │
+│   ├── pages/                # Streamlit multi-page files
+│   │   ├── 1_Home.py
+│   │   ├── 2_About_Us.py
+│   │   ├── 3_Services.py
+│   │   ├── 4_Why_Choose_Us.py
+│   │   ├── 5_Testimonials.py
+│   │   ├── 6_Contact_Us.py
+│   │   ├── 7_Privacy_Terms.py
+│   │
+│   ├── components/           # Reusable UI components
+│   │   ├── header.py
+│   │   ├── footer.py
+│   │   ├── cta.py
+│   │   ├── navbar.py
+│   │
+│   ├── assets/               # Static files
+│   │   ├── images/
+│   │   │   ├── hero.jpg
+│   │   │   ├── residential.jpg
+│   │   │   ├── commercial.jpg
+│   │   │   ├── industrial.jpg
+│   │   │   ├── testimonial_1.jpg
+│   │   │   └── logo.png
+│   │   │
+│   │   └── css/
+│   │       └── style.css
+│   │
+│   ├── utils/                # Helpers & constants
+│   │   ├── config.py
+│   │   └── api_client.py
+│   │
+│   └── requirements.txt      # Streamlit dependencies
+│
+├── backend/                  # Flask API (Business logic)
+│   ├── app.py                # Flask app entry
+│   │
+│   ├── routes/               # API routes
+│   │   ├── leads.py
+│   │   ├── testimonials.py
+│   │   └── contact.py
+│   │
+│   ├── services/             # Business logic
+│   │   ├── lead_service.py
+│   │   └── email_service.py
+│   │
+│   ├── models/               # Database models
+│   │   └── lead_model.py
+│   │
+│   ├── database/
+│   │   ├── db.py             # MySQL connection
+│   │   └── schema.sql
+│   │
+│   ├── config.py
+│   └── requirements.txt      # Flask dependencies
+│
+├── database/                 # MySQL Workbench files
+│   ├── schema.sql
+│   └── seed_data.sql
+│
+├── .env                      # Environment variables
+├── .gitignore
+├── README.md
+└── docker-compose.yml        # (Optional) future deployment

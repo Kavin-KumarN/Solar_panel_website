@@ -1,0 +1,329 @@
+PHASE 0: PRE-FLIGHT CHECK (ONE-TIME)
+Step 0.1 — Activate virtual environment
+
+In PyCharm:
+
+Ensure .venv is selected as interpreter
+
+Or activate manually (Windows):
+
+.venv\Scripts\activate
+
+Step 0.2 — Install dependencies (later we’ll refine)
+
+For now, install basics:
+
+pip install streamlit flask mysql-connector-python python-dotenv requests
+
+🔹 PHASE 1: BACKEND (Flask + MySQL)
+
+We always build backend first, because frontend depends on it.
+
+STEP 1 — Database Design (MySQL)
+
+📍 Files:
+
+database/schema.sql
+backend/database/schema.sql
+
+
+Goal: Define what data your business needs.
+
+Core tables:
+
+leads
+
+testimonials
+
+contact_messages (optional)
+
+Outcome:
+✔ MySQL schema ready
+✔ Tables created via MySQL Workbench
+
+STEP 2 — Database Connection Layer
+
+📍 File:
+
+backend/database/db.py
+
+
+Responsibility:
+
+Connect Flask → MySQL
+
+Centralized DB connection
+
+No SQL in route files
+
+Outcome:
+✔ Flask can talk to MySQL
+
+STEP 3 — Models (Data Access Layer)
+
+📍 File:
+
+backend/models/lead_model.py
+
+
+Responsibility:
+
+Insert lead
+
+Fetch leads
+
+Abstract SQL logic
+
+Example responsibility (not code yet):
+
+create_lead(name, phone, email, location)
+
+
+Outcome:
+✔ Clean separation of logic
+
+STEP 4 — Services (Business Logic)
+
+📍 Files:
+
+backend/services/lead_service.py
+backend/services/email_service.py
+
+
+Responsibility:
+
+Validation
+
+Business rules
+
+Optional email / WhatsApp logic
+
+Example:
+
+validate phone number
+check duplicate leads
+
+
+Outcome:
+✔ No business logic in routes
+
+STEP 5 — Routes (API Layer)
+
+📍 Files:
+
+backend/routes/leads.py
+backend/routes/contact.py
+backend/routes/testimonials.py
+
+
+Responsibility:
+
+Handle HTTP requests
+
+Call services
+
+Return JSON responses
+
+Endpoints example:
+
+POST /api/leads
+GET  /api/testimonials
+
+
+Outcome:
+✔ REST API ready
+
+STEP 6 — Flask App Bootstrap
+
+📍 File:
+
+backend/app.py
+
+
+Responsibility:
+
+Register routes
+
+Load config
+
+Start Flask server
+
+Run backend:
+
+python backend/app.py
+
+
+✔ Backend running independently
+
+🔹 PHASE 2: FRONTEND (Streamlit Website)
+
+Once backend works, we build UI.
+
+STEP 7 — Global Configuration & Theme
+
+📍 Files:
+
+frontend/utils/config.py
+frontend/assets/css/style.css
+
+
+Responsibility:
+
+Colors
+
+Fonts
+
+Button styles
+
+Consistent branding
+
+Outcome:
+✔ Same look across pages
+
+STEP 8 — Shared Components
+
+📍 Files:
+
+frontend/components/
+
+
+Components:
+
+navbar.py
+
+header.py
+
+footer.py
+
+cta.py
+
+Responsibility:
+
+Reusable UI blocks
+
+No duplicated code
+
+Outcome:
+✔ Maintainable UI
+
+STEP 9 — Home Page (MOST IMPORTANT)
+
+📍 File:
+
+frontend/app.py
+frontend/pages/1_Home.py
+
+
+Sections:
+
+Hero + CTA
+
+Services
+
+Why Choose Us
+
+Process
+
+Testimonials
+
+Final CTA
+
+Outcome:
+✔ Lead-ready landing page
+
+STEP 10 — Remaining Pages
+
+📍 Files:
+
+frontend/pages/
+
+
+Build in this order:
+
+About Us
+
+Services
+
+Why Choose Us
+
+Testimonials
+
+Contact Us
+
+Privacy & Terms
+
+Outcome:
+✔ Full professional website
+
+🔹 PHASE 3: FRONTEND ↔ BACKEND INTEGRATION
+STEP 11 — API Client (Frontend → Backend)
+
+📍 File:
+
+frontend/utils/api_client.py
+
+
+Responsibility:
+
+Call Flask APIs
+
+Handle responses
+
+Error handling
+
+Example:
+
+submit_lead(data)
+
+
+Outcome:
+✔ Forms send data to backend
+
+STEP 12 — Contact / Lead Form
+
+📍 File:
+
+frontend/pages/6_Contact_Us.py
+
+
+Flow:
+
+User submits form
+→ Streamlit
+→ Flask API
+→ MySQL
+→ Success message
+
+
+Outcome:
+✔ Real customer leads captured
+
+🔹 PHASE 4: FINAL QUALITY CHECK
+STEP 13 — QA Checklist
+
+✔ All pages load
+✔ No broken navigation
+✔ Forms validated
+✔ Mobile tested
+✔ Images load correctly
+✔ CTAs working
+
+STEP 14 — Run Project
+
+Backend
+
+python backend/app.py
+
+
+Frontend
+
+streamlit run frontend/app.py
+
+🧭 VISUAL SUMMARY
+MySQL
+  ↑
+Flask API (backend)
+  ↑
+Streamlit UI (frontend)
+  ↑
+Customer Browser
